@@ -245,12 +245,12 @@ void main() {
     //outc.rgb += bvr*.4;
 
     float salt = randomNoise(uv+seed/1000000.+.3143+u_time*.0000+fbm(uv)*.02);
-    salt = .3*(-.15 + smoothstep(.96, .999, salt));
+    salt = .1*(-.15 + smoothstep(.96, .999, salt));
     outc = .026 + outc*(.97 - .026);
     outc.rgb += salt;
     
     float ssalt = randomNoise(uv+seed/1000000.+4.3+.3143+u_time*.0000+fbm(uv)*.02);
-    ssalt = .06*(smoothstep(.5, .999, ssalt));
+    ssalt = .03*(smoothstep(.5, .999, ssalt));
     outc.rgb += ssalt;
     
     float pepper = randomNoise(uv+seed/1000000.+1.3+.3143+u_time*.0000+fbm(uv)*.02);
